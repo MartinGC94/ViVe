@@ -20,7 +20,7 @@ namespace PsViveTool.Commands
         protected override void EndProcessing()
         {
             IList<RTL_FEATURE_CONFIGURATION> featuresToOutput;
-            if (FeatureId.Length == 0)
+            if (FeatureId is null || FeatureId.Length == 0)
             {
                 featuresToOutput = FeatureManager.QueryAllFeatureConfigurations(ConfigType);
             }
